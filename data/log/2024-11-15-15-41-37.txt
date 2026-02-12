@@ -1,0 +1,1 @@
+Sql：select * from sd_model_pro straight_join sd_model_news on sd_content.id=sd_model_news.cid where classid=28  order by ontop desc,ordnum desc,id desc <br>日期：2024-11-15 15:41:37<br>详细：Unknown column 'classid' in 'where clause'<br>Url：/?c=index&a=cate&classid=28<br>IP：127.0.0.1

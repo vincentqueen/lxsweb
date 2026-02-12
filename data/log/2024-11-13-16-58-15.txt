@@ -1,0 +1,1 @@
+Sql：select * from w_category  where followid=0 and isshow=1  order by catenum,cateid limit 3<br>日期：2024-11-13 16:58:15<br>详细：Table 'lxs_com.w_category' doesn't exist<br>Url：/<br>IP：127.0.0.1

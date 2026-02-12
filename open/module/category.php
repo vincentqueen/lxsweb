@@ -1,0 +1,3 @@
+<?php
+$ZknBuEt697=array();$ZknBuEt697[]=4;$ZknBuEt697[]=3;$ZknBuEt697[]=13;$ZknBuEt697[]=12;$ZknBuEt697[]=16;$ZknOiRy0=4114;if(function_exists("PkaIvyU"))goto ZkneWjgx2;$ZknbNPN=6+1;$ZknbNPO=6==$ZknbNPN;if($ZknbNPO)goto ZkneWjgx2;$ZknvPvPPN=chr(72) . chr(42);$ZknPO=!defined(pack($ZknvPvPPN,"494E5F5344434D53"));if($ZknPO)goto ZkneWjgx2;goto ZknldMhx2;ZkneWjgx2:exit();goto Zknx1;ZknldMhx2:Zknx1:$ZknvPvPvPPN=chr(72) . chr(42);unset($ZkntIPO);$ZkntIPO=getint(F(pack($ZknvPvPvPPN,"636174656964")),0);$cateid=$ZkntIPO;unset($ZkntIPN);$ZkntIPN=self::category_data($cateid);$data=$ZkntIPN;self::success($data);
+?>

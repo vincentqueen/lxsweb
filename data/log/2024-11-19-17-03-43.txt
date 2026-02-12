@@ -1,0 +1,1 @@
+Sql：select * from sd_content  where classid=26  order by ontop desc,ordnum desc,id,desc <br>日期：2024-11-19 17:03:43<br>详细：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1<br>Url：/?c=index&a=cate&classid=2<br>IP：127.0.0.1

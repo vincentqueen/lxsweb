@@ -1,0 +1,1 @@
+Sql：select * from sd_model_page  where cateid=2   limit 1<br>日期：2024-11-14 15:27:50<br>详细：Unknown column 'cateid' in 'where clause'<br>Url：/<br>IP：127.0.0.1

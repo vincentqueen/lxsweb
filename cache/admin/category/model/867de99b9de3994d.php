@@ -1,0 +1,165 @@
+<?php defined('IN_SDCMS') or die(); if(!defined('IN_SDCMS')) exit;?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>编辑模型</title>
+<link rel="stylesheet" href="<?php echo WEB_ROOT;?>public/css/ui.css">
+<link rel="stylesheet" href="<?php echo WEB_ROOT;?>public/admin/css/layout.css">
+<script src="<?php echo WEB_ROOT;?>public/js/jquery.js"></script>
+<script src="<?php echo WEB_ROOT;?>public/js/ui.js?v=202409"></script>
+<script src="<?php echo WEB_ROOT;?>public/admin/js/base.js"></script>
+</head>
+
+<body>
+    <div class="position">当前位置：栏目管理 > <a href="<?php echo U('index');?>">模型管理</a> > <a href="<?php echo THIS_LOCAL;?>">编辑模型</a></div>
+    <div class="borders">
+        <!---->
+		<form class="ui-form" method="post">
+			<div class="ui-tabs ui-tabs-white">
+				<ul class="ui-tabs-nav">
+					<li class="active"><a href="javascript:;">基本设置</a></li>
+					<li><a href="javascript:;">模板设置</a></li>
+					<li><a href="javascript:;">可选设置</a></li>
+				</ul>
+				<div class="ui-tabs-content">
+					<div class="ui-tabs-pane active">
+						<!--1111-->
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">模型名称：</label>
+							<div class="col-right">
+								<input type="text" name="t0" class="ui-form-ip" value="<?php echo $title;?>" placeholder="请输入模型名称" data-rule="模型名称:required;">
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">模型标识：</label>
+							<div class="col-right">
+								<input type="text" name="t1" class="ui-form-ip" value="<?php echo $tablename;?>" disabled maxlength="20" data-rule="模型标识:required;">
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">模型描述：</label>
+							<div class="col-right">
+								<input type="text" name="t2" class="ui-form-ip" value="<?php echo $model_desc;?>">
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">模型排序：</label>
+							<div class="col-right">
+								<input type="text" name="t5" class="ui-form-ip" value="<?php echo $ordnum;?>">
+								<span class="input-tips">数字越小越靠前</span>
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">状态：</label>
+							<div class="col-right col-right-top">
+								<label class="ui-radio"><input type="radio" name="t6" id="t6_1" value="1" <?php if ($islock==1) { ?> checked<?php }?>><i></i>启用</label>
+								<label class="ui-radio"><input type="radio" name="t6" id="t6_2" value="0" <?php if ($islock==0) { ?> checked<?php }?>><i></i>锁定</label>
+							</div>
+						</div>
+						<!--1111-->
+					</div>
+					
+					<div class="ui-tabs-pane">
+						<!--2222-->
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">列表模板：</label>
+							<div class="col-right">
+								<div class="ui-input-group">
+									<input type="text" name="t3" id="t3" class="ui-form-ip radius-right-none" value="<?php echo $list_skins;?>">
+									<a class="after template ui-icon-select" data-name="t3" data-url="<?php echo U('theme/template');?>" title="选择">选择</a>
+								</div>
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">内容模板：</label>
+							<div class="col-right">
+								<div class="ui-input-group">
+									<input type="text" name="t4" id="t4" class="ui-form-ip radius-right-none" value="<?php echo $show_skins;?>">
+									<a class="after template ui-icon-select" data-name="t4" data-url="<?php echo U('theme/template');?>" title="选择">选择</a>
+								</div>
+							</div>
+						</div>
+						<!--2222-->
+					</div>
+					
+					<div class="ui-tabs-pane">
+						<!--3333-->
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">阅读权限：</label>
+							<div class="col-right col-right-top">
+								<label class="ui-radio"><input type="radio" name="t8" value="1"<?php if ($leverstate==1) { ?> checked<?php }?>><i></i>开启</label>
+								<label class="ui-radio"><input type="radio" name="t8" value="0"<?php if ($leverstate==0) { ?> checked<?php }?>><i></i>关闭</label>
+								<span class="input-tips">文章类模型可以开启</span>
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">收费阅读：</label>
+							<div class="col-right col-right-top">
+								<label class="ui-radio"><input type="radio" name="t9" value="1"<?php if ($buystate==1) { ?> checked<?php }?>><i></i>开启</label>
+								<label class="ui-radio"><input type="radio" name="t9" value="0"<?php if ($buystate==0) { ?> checked<?php }?>><i></i>关闭</label>
+								<span class="input-tips">需要模型中存在【price】字段</span>
+							</div>
+						</div>
+						<div class="ui-form-group ui-row">
+							<label class="col-left ui-col-form-label">表单分组：</label>
+							<div class="col-right">
+								<textarea name="t7" class="ui-form-ip" rows="5" cols="50"><?php echo $form_group;?></textarea>
+								<span class="input-tips">示范：项目名称1项目值1<br>　　　项目名称2|项目值2</span>
+							</div>
+						</div>
+						<!--3333-->
+					</div>
+	
+				</div>
+			</div>
+			
+			<div class="ui-form-group ui-mt">
+            	<input type="hidden" name="token" value="<?php echo $token;?>">
+				<button type="submit" class="ui-btn ui-btn-info ui-mr-sm">保存</button>
+				<button type="button" class="ui-btn ui-back">返回</button>
+			</div>
+			</form>
+			<!---->
+		</div>
+        
+    </div>
+
+<script>
+$(function()
+{
+	$(".ui-form").form(
+	{
+		type:2,
+		align:'top-right',
+		result:function(form)
+		{
+			$.ajax(
+			{
+                type:'post',
+                cache:false,
+                dataType:'json',
+                url:'<?php echo THIS_LOCAL;?>',
+                data:$(form).serialize(),
+                error:function(e){alert(e.responseText);},
+                success:function(d)
+                {
+                    if(d.state=='success')
+                    {
+                        sdcms.success(d.msg);
+                       	setTimeout(function(){location.href='<?php echo U("index");?>';},1500);
+                    }
+                    else
+                    {
+                        sdcms.error(d.msg);
+                    }  
+                }
+            });
+		}
+	});
+})
+</script>
+</body>
+</html>

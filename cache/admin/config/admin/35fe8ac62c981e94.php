@@ -1,0 +1,108 @@
+<?php defined('IN_SDCMS') or die(); if(!defined('IN_SDCMS')) exit;?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>添加管理员</title>
+<link rel="stylesheet" href="<?php echo WEB_ROOT;?>public/css/ui.css">
+<link rel="stylesheet" href="<?php echo WEB_ROOT;?>public/admin/css/layout.css">
+<script src="<?php echo WEB_ROOT;?>public/js/jquery.js"></script>
+<script src="<?php echo WEB_ROOT;?>public/js/ui.js?v=202409"></script>
+</head>
+
+<body class="bg_white">
+<div class="border_iframe">
+    <form class="ui-form" method="post">
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">用户名：</label>
+            <div class="ui-col-9">
+                <input type="text" name="t0" class="ui-form-ip" maxlength="20" placeholder="请输入用户名" data-rule="用户名:required;username">
+            </div>
+        </div>
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">密码：</label>
+            <div class="ui-col-9">
+                <input type="text" name="t1" class="ui-form-ip" maxlength="16" placeholder="请输入密码" data-rule="密码:required;password;">
+            </div>
+        </div>
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">昵称：</label>
+            <div class="ui-col-9">
+                <input type="text" name="t2" class="ui-form-ip" placeholder="请输入昵称">
+            </div>
+        </div>
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">部门选择：</label>
+            <div class="ui-col-9">
+                <select name="t3" class="ui-form-ip">
+                    <option value="0">超级管理员</option>
+                    <?php $array_rs=$this->db->load("select * from sd_admin_part  where 1=1   order by ordnum,id ",0,false,0);$total_rs=count($array_rs);if($total_rs==0){ ?>
+<?php } else{ ?>
+<?php $i=0;} foreach($array_rs as $rs){ $i++;?>
+                    <option value="<?php echo $rs['id'];?>"><?php echo $rs['title'];?></option>
+                    <?php } if($total_rs>0){ ?>
+<?php }?>
+                </select>
+            </div>
+        </div>
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">状态：</label>
+            <div class="ui-col-9 col-right-top">
+                <label class="ui-radio"><input type="radio" name="t4" value="1" checked><i></i>启用</label>
+                <label class="ui-radio"><input type="radio" name="t4" value="0"><i></i>锁定</label>
+            </div>
+        </div>
+        <div class="ui-form-group ui-row">
+            <label class="ui-col-3 ui-col-form-label">只读模式：</label>
+            <div class="ui-col-9 col-right-top">
+                <label class="ui-radio"><input type="radio" name="t5" value="1"><i></i>开启</label>
+                <label class="ui-radio"><input type="radio" name="t5" value="0" checked><i></i>关闭</label>
+            </div>
+        </div>
+        <div class="ui-form-group ui-hide">
+        	<input type="hidden" name="token" value="<?php echo $token;?>">
+            <button type="submit" id="sdcms-submit">保存</button>
+        </div>
+    </form>
+    <!---->
+</div>
+
+<script>
+$(function()
+{
+	var backurl=window.parent.location;
+	$(".ui-form").form(
+	{
+		type:2,
+		align:'bottom-center',
+		result:function(form)
+		{
+			$.ajax(
+			{
+				type:'post',
+				cache:false,
+				dataType:'json',
+				url:'<?php echo THIS_LOCAL;?>',
+				data:$(form).serialize(),
+				error:function(e){alert(e.responseText);},
+				success:function(d)
+				{
+					if(d.state=='success')
+					{
+						sdcms.success(d.msg);
+						setTimeout(function(){parent.location.href=backurl;},1000);
+					}
+					else
+					{
+						sdcms.error(d.msg);
+					}  
+				}
+			});
+		}
+	});
+})
+</script>
+</body>
+</html>
