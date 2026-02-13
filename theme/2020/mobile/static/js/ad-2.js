@@ -1,0 +1,6 @@
+document.write("<div class=\"ifocus swiper-container\">");
+document.write("    <div class=\"swiper-wrapper\"><div class=\"swiper-slide\"><a href=\"\/m\/berneck\/index.html\" title=\"Demo1\" target=\"_self\"><img src=\"\/upfiles\/banner\/m-01.jpg\"><\/a><\/div><div class=\"swiper-slide\"><a href=\"\/m\/auvico\/index.html\" title=\"澳唯柯\" target=\"_self\"><img src=\"\/upfiles\/banner\/202111\/09\/13515312.png\"><\/a><\/div><div class=\"swiper-slide\"><a href=\"\/m\/aige\/index.html\" title=\"Demo2\" target=\"_self\"><img src=\"\/upfiles\/banner\/m-02.jpg\"><\/a><\/div><div class=\"swiper-slide\"><a href=\"\/m\/luhua\/index.html\" title=\"Demo3\" target=\"_self\"><img src=\"\/upfiles\/banner\/m-03.jpg\"><\/a><\/div><div class=\"swiper-slide\"><a href=\"\/m\/karrisen\/index.html\" title=\"凯立森\" target=\"_self\"><img src=\"\/upfiles\/banner\/202111\/09\/13513472.png\"><\/a><\/div><div class=\"swiper-slide\"><a href=\"\/smb\/index.html\" title=\"饰面板\" target=\"_self\"><img src=\"\/upfiles\/banner\/202102\/24\/10321051.jpg\"><\/a><\/div><\/div>");
+document.write("    <div class=\"swiper-button-prev slideprev swiper-button-white\"><\/div>");
+document.write("    <div class=\"swiper-button-next slidenext swiper-button-white\"><\/div>");
+document.write("    <div class=\"swiper-pagination switcher\"><\/div>");
+document.write("<\/div>");

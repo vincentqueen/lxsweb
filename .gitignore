@@ -1,0 +1,9 @@
+cache/compile/
+cache/admin/
+data/log/
+install/install.lock
+.user.ini
+*.log
+*.tmp
+debug_*.php
+debug_*.html
