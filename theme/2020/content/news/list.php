@@ -5,11 +5,23 @@
 <meta name="description" content="{if !isempty($catedesc)}{$catedesc}{else}{$catename}{/if}">
 </head>
 
-<body class="page-about sub">
-<div class="wrapper">   
+<body class="page-about sub" style="background: #fff !important;">
+<div class="wrapper" style="background: #fff !important;">   
 {include file="include/head.php"} 
+<style>
+  body.page-about, .bodyer, .wrapper, .pnews, .pwrap, .news-item {
+    background: #fff !important;
+  }
+  .news-item {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .mbnr {
+    background: transparent !important;
+  }
+</style>
   
-<div class="bodyer">
+<div class="bodyer" style="background: #fff !important;">
 
     <div class="mbnr" style="position: relative; height: auto !important; padding-bottom: 0 !important;">
         <div class="bg" style="position: relative !important; height: auto !important;">
@@ -27,10 +39,10 @@
                 <!--main list-->
                 <div class="pbody ui-atc">
                     <div class="news-list-grid" style="display: flex; flex-direction: column; gap: 30px;">
-					{sdcms:rs top="0" pagesize="6" table="sd_content" where="sd_content.classid=28" order="ontop desc,ordnum desc,id desc"}
-                        <div class="news-item" style="background: #fff !important; border: none; border-radius: 16px; padding: 24px; transition: all 0.4s ease; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);">
-                            <a href="{$rs[link]}" title="{$rs[title]}" style="display: flex; text-decoration: none; gap: 24px; align-items: flex-start;">
-                                <div class="thumb" style="width: 280px; flex-shrink: 0; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                  {sdcms:rs top="0" pagesize="6" table="sd_content" where="sd_content.classid=28" order="ontop desc,ordnum desc,id desc"}
+                    <div class="news-item" style="background: #fff !important; border: none; border-radius: 16px; padding: 24px; transition: all 0.4s ease; box-shadow: none !important;">
+                      <a href="{$rs[link]}" title="{$rs[title]}" style="display: flex; text-decoration: none; gap: 24px; align-items: flex-start;">
+                        <div class="thumb" style="width: 280px; flex-shrink: 0; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: none !important;">
                                     <img src="{$rs[pic]}" alt="{$rs[title]}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                                 </div>
                                 <div class="info" style="flex: 1; padding-top: 8px;">

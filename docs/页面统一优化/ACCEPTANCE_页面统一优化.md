@@ -14,7 +14,15 @@
 | classid=28 (news/list.php) 优化 | ✅ 已完成 | 统一样式并修复 SQL 错误和分页 |
 | classid=6 (contact.php) 优化 | ✅ 已完成 | 统一 Banner 及布局 |
 
+## 2026-02-14 优化修正
+| 任务 | 状态 | 说明 |
+| :--- | :--- | :--- |
+| classid=6 Contact Banner 高度修复 | ✅ 已完成 | 修复 Banner 容器高度溢出问题 (height:0, overflow:hidden) |
+| classid=28 News List 背景修复 | ✅ 已完成 | 强制修正背景为纯白，移除灰色阴影和边框 |
+| classid=28 News Banner 比例调整 | ✅ 已完成 | 调整为 21:5 比例 |
+
 ## 验证结果
-- 所有页面 Banner 均呈现 21:9 比例。
+- 所有页面 Banner 均呈现 21:9 比例（新闻中心为 21:5）。
 - 图片展示完整，无排版重叠。
 - 后台登录已验证可行（通过重置脚本确认数据库更新）。
+- 新闻中心背景已确认为纯白。
