@@ -21,14 +21,14 @@
         </div>
     </div>
 
-	<div class="pnews" style="background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.9) 100%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlNmU4ZjAiIG9wYWNpdHk9IjAuMiIvPgo8L3N2Zz4='); padding: 60px 0 80px;">
+	<div class="pnews" style="background: #fff !important; padding: 60px 0 80px;">
 		<div class="pwrap">
             <div class="wm" style="max-width: 1200px; margin: 0 auto;">
                 <!--main list-->
                 <div class="pbody ui-atc">
                     <div class="news-list-grid" style="display: flex; flex-direction: column; gap: 30px;">
 					{sdcms:rs top="0" pagesize="6" table="sd_content" where="sd_content.classid=28" order="ontop desc,ordnum desc,id desc"}
-                        <div class="news-item" style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 16px; padding: 24px; transition: all 0.4s ease; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);">
+                        <div class="news-item" style="background: #fff !important; border: none; border-radius: 16px; padding: 24px; transition: all 0.4s ease; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);">
                             <a href="{$rs[link]}" title="{$rs[title]}" style="display: flex; text-decoration: none; gap: 24px; align-items: flex-start;">
                                 <div class="thumb" style="width: 280px; flex-shrink: 0; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                                     <img src="{$rs[pic]}" alt="{$rs[title]}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
@@ -47,7 +47,7 @@
 						{/sdcms:rs}
                     </div> 
                     <style>
-                        .news-item:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12) !important; background: rgba(255, 255, 255, 0.9) !important; }
+                        .news-item:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12) !important; background: #fff !important; }
                         .news-item:hover .thumb img { transform: scale(1.08); }
                         .news-item:hover h5 { color: #000; }
                         @media (max-width: 768px) {

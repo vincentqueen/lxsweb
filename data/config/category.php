@@ -834,7 +834,7 @@ return array (
     'cate_extend' => '0',
     'cate_groupid' => '',
     'myename' => 'contact',
-    'mynybanner' => '/upfile/2025/03/1741744527332.png',
+    'mynybanner' => '/upfile/2025/03/1741943772190.jpg',
     'sypic' => '',
     'depth' => 0,
     'parent' => '6',
