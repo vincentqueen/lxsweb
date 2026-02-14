@@ -39,7 +39,7 @@ return array (
     'cateurl' => '',
     'catepage' => '20',
     'catelist' => '',
-    'cateshow' => 'content/page/product_detail_general.php',
+    'cateshow' => 'content/page/product_detail_37.php',
     'catetitle' => '',
     'catekey' => '',
     'catedesc' => '',
@@ -614,8 +614,8 @@ return array (
     'sypic' => '',
     'depth' => 0,
     'parent' => '41',
-    'sonid' => '41,42,43,44',
-    'child' => 3,
+    'sonid' => '41,42,44',
+    'child' => 2,
   ),
   42 => 
   array (
@@ -649,7 +649,7 @@ return array (
   array (
     'cateid' => '43',
     'catename' => '产品介绍',
-    'followid' => '41',
+    'followid' => '28',
     'catenum' => '0',
     'catetype' => '-1',
     'cateurl' => '',
@@ -669,7 +669,7 @@ return array (
     'mynybanner' => '/upfile/2026/47/jimeng-2026-02-14-5052.png',
     'sypic' => '',
     'depth' => 1,
-    'parent' => '41,43',
+    'parent' => '28,43',
     'sonid' => '43',
     'child' => 0,
   ),
@@ -838,8 +838,8 @@ return array (
     'sypic' => '',
     'depth' => 0,
     'parent' => '28',
-    'sonid' => '28',
-    'child' => 0,
+    'sonid' => '28,43',
+    'child' => 1,
   ),
   6 => 
   array (
