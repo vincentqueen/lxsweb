@@ -515,7 +515,7 @@ return array (
     'cateurl' => '',
     'catepage' => '20',
     'catelist' => '',
-    'cateshow' => 'content/page/product_detail_general.php',
+    'cateshow' => 'content/page/product_detail_37.php',
     'catetitle' => '',
     'catekey' => '',
     'catedesc' => '',
