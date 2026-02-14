@@ -10,8 +10,10 @@
 {include file="include/head.php"}
 <div class="bodyer">
 
-    <div class="mbnr">
-        <div class="bg"><img src="{$mynybanner}" class="banner"></div>
+    <div class="mbnr" style="height: auto !important; padding-bottom: 0 !important;">
+        <div class="bg" style="height: auto !important;">
+            <img src="{$mynybanner}" class="banner" style="width: 100%; aspect-ratio: 1920/700; object-fit: cover; display: block;">
+        </div>
     </div>
 
     <div class="pwrap contact">
