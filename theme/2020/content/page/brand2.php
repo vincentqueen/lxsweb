@@ -63,13 +63,72 @@
                     
                     <div class="p-features p-berneck-ads" id="j_ads">
                         <div class="wm">
+                            <style>
+                                .p-berneck-ads ul {
+                                    display: grid !important;
+                                    grid-template-columns: repeat(2, 1fr) !important;
+                                    gap: 30px !important;
+                                    list-style: none !important;
+                                    padding: 0 !important;
+                                    margin: 0 !important;
+                                }
+                                .p-berneck-ads ul li {
+                                    background: #fff !important;
+                                    border-radius: 12px !important;
+                                    overflow: hidden !important;
+                                    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+                                    display: flex !important;
+                                    flex-direction: column !important;
+                                    width: 100% !important;
+                                    height: auto !important;
+                                    margin: 0 !important;
+                                    transition: transform 0.3s ease !important;
+                                }
+                                .p-berneck-ads ul li:hover {
+                                    transform: translateY(-5px) !important;
+                                }
+                                .p-berneck-ads ul li img {
+                                    width: 100% !important;
+                                    height: 240px !important;
+                                    object-fit: cover !important;
+                                    display: block !important;
+                                }
+                                .p-berneck-ads .info {
+                                    padding: 30px !important;
+                                    position: static !important;
+                                    height: auto !important;
+                                    background: none !important;
+                                    flex: 1 !important;
+                                    display: flex !important;
+                                    flex-direction: column !important;
+                                }
+                                .p-berneck-ads h5 {
+                                    font-size: 20px !important;
+                                    font-weight: bold !important;
+                                    margin-bottom: 15px !important;
+                                    color: #333 !important;
+                                }
+                                .p-berneck-ads .txt {
+                                    font-size: 15px !important;
+                                    line-height: 1.8 !important;
+                                    color: #666 !important;
+                                }
+                                @media (max-width: 768px) {
+                                    .p-berneck-ads ul {
+                                        grid-template-columns: 1fr !important;
+                                    }
+                                    .p-berneck-ads ul li img {
+                                        height: 200px !important;
+                                    }
+                                }
+                            </style>
                             <ul>
                             {sdcms:rs top="0" table="sd_content" where="classid=31" order="ontop desc,ordnum desc,id desc"}
                                 <li>
                                     <img src="{$rs[pic]}">
                                     <div class="info">
                                         <h5>{$rs[title]}</h5>
-                                        <div class="txt">{cutstr(nohtml($rs[intro]),1000,1)}</div>
+                                        <div class="txt">{$rs[intro]}</div>
                                     </div>
                                 </li>
                             {/sdcms:rs}

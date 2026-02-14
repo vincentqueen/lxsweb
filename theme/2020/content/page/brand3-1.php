@@ -54,6 +54,9 @@
                                 </div>
                                 {/sdcms:rs}
                             </div>
+                            <div class="mgs-right" style="display: flex; align-items: center; justify-content: center;">
+                                <img src="/upfile/2026/47/jimeng-2026-02-14-8251.png" alt="展示图片" style="width: 100%; max-width: 520px; display: block; border-radius: 12px;">
+                            </div>
 
                         </div>
                     </div>
@@ -61,14 +64,77 @@
                     <!--产品特点-->
                     <div class="p-berneck-ads" id="j_ads">
                         <div class="wm">
+                            <div class="hd" style="margin-bottom: 30px; text-align: center;">
+                                <h3 style="font-size: 30px; font-weight: 800; color: #333; margin: 0;">产品特点</h3>
+                            </div>
+                            <style>
+                                .p-berneck-ads ul {
+                                    display: grid !important;
+                                    grid-template-columns: repeat(2, 1fr) !important;
+                                    gap: 30px !important;
+                                    list-style: none !important;
+                                    padding: 0 !important;
+                                    margin: 0 !important;
+                                }
+                                .p-berneck-ads ul li {
+                                    background: #fff !important;
+                                    border-radius: 12px !important;
+                                    overflow: hidden !important;
+                                    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+                                    display: flex !important;
+                                    flex-direction: column !important;
+                                    width: 100% !important;
+                                    height: auto !important;
+                                    margin: 0 !important;
+                                    transition: transform 0.3s ease !important;
+                                }
+                                .p-berneck-ads ul li:hover {
+                                    transform: translateY(-5px) !important;
+                                }
+                                .p-berneck-ads ul li img {
+                                    width: 100% !important;
+                                    height: 240px !important;
+                                    object-fit: cover !important;
+                                    display: block !important;
+                                }
+                                .p-berneck-ads .info {
+                                    padding: 30px !important;
+                                    position: static !important;
+                                    height: auto !important;
+                                    background: none !important;
+                                    flex: 1 !important;
+                                    display: flex !important;
+                                    flex-direction: column !important;
+                                }
+                                .p-berneck-ads h5 {
+                                    font-size: 20px !important;
+                                    font-weight: bold !important;
+                                    margin-bottom: 15px !important;
+                                    color: #333 !important;
+                                }
+                                .p-berneck-ads .txt {
+                                    font-size: 15px !important;
+                                    line-height: 1.8 !important;
+                                    color: #666 !important;
+                                }
+                                @media (max-width: 768px) {
+                                    .p-berneck-ads ul {
+                                        grid-template-columns: 1fr !important;
+                                    }
+                                    .p-berneck-ads ul li img {
+                                        height: 200px !important;
+                                    }
+                                }
+                            </style>
                             <ul>
-                                {sdcms:rs top="0" table="sd_content" where="classid=51" order="ontop desc,ordnum desc,id
-                                desc"}
+                                {sdcms:rs top="0" table="sd_content" where="classid=51" order="ontop desc,ordnum desc,id desc"}
                                 <li>
                                     <img src="{$rs[pic]}">
                                     <div class="info mgs_info">
                                         <h5>{$rs[title]}</h5>
-                                        <div class="txt">{cutstr(nohtml($rs[intro]),1000,1)}</div>
+                                        <div class="txt">
+                                            {if !isempty($rs[intro])}{$rs[intro]}{else}{$rs[content]}{/if}
+                                        </div>
                                     </div>
                                 </li>
                                 {/sdcms:rs}
@@ -78,8 +144,8 @@
                     <!--荣誉资质-->
                     <div class="p-berneck-cert" id="j_certs">
                         <div class="wm">
-                            <div class="hd">
-                                <h3>产品相关检测报告</h3>
+                            <div class="hd" style="margin-bottom: 30px; text-align: center;">
+                                <h3 style="font-size: 30px; font-weight: 800; color: #333; margin: 0;">产品相关检测报告</h3>
                             </div>
                             <div class="bd">
                                 <div class="cloty-grid">
